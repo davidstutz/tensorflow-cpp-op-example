@@ -6,6 +6,11 @@ execute_process(COMMAND python3 -c "import tensorflow; print(tensorflow.sysconfi
 # C++11 required for tensorflow
 set(CMAKE_CXX_FLAGS "-std=c++11 ${CMAKE_CXX_FLAGS}")
 
+# if GCC > 5
+if (CMAKE_CXX_COMPILER_VERSION VERSION_GREATER 5.0 OR CMAKE_CXX_COMPILER_VERSION VERSION_EQUAL 5.0)
+  set(CMAKE_CXX_FLAGS "-D_GLIBCXX_USE_CXX11_ABI=0 ${CMAKE_CXX_FLAGS}")
+endif()
+
 # build the actual operation which can be used directory
 include_directories(${Tensorflow_INCLUDE_DIRS})
 add_library(inner_product SHARED inner_product.cc)
