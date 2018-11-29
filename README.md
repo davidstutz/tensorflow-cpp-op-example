@@ -16,7 +16,7 @@ In the `CMakeLists.txt` this is used as follows:
 The remaining contents are pretty standard. Building is now done using:
 
     $ mkdir build
-    $ cd buils
+    $ cd build
     $ cmake ..
     $ make
     Scanning dependencies of target inner_product
