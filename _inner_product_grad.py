@@ -9,7 +9,7 @@ import tensorflow as tf
 from tensorflow.python.framework import ops
 from tensorflow.python.ops import array_ops
 from tensorflow.python.ops import sparse_ops
-inner_product_grad_module = tf.load_op_library('build/libinner_product_grad.so')
+inner_product_grad_module = tf.load_op_library('libinner_product_grad.so')
 
 @ops.RegisterGradient("InnerProduct")
 def _inner_product_grad_cc(op, grad):
@@ -47,3 +47,6 @@ def _inner_product_grad(op, grad):
     
     return [tf.transpose(grad_input), grad_weights]
   
+
+
+
