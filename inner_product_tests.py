@@ -9,7 +9,7 @@ import unittest
 import numpy as np
 import tensorflow as tf
 import _inner_product_grad
-inner_product_module = tf.load_op_library('build/libinner_product.so')
+inner_product_module = tf.load_op_library('libinner_product.so')
 
 class InnerProductOpTest(unittest.TestCase):
     def test_raisesExceptionWithIncompatibleDimensions(self):
